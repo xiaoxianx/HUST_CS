@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.8919597989949749" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="480.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryManage.check_controller">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="875.0">
+            <children>
+                <TabPane layoutX="-2.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="962.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="订单记录">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="600.0">
+                                    <children>
+                                        <CheckBox fx:id="hideold" layoutX="422.0" layoutY="6.0" mnemonicParsing="false" onAction="#hideOldCheck" text="隐藏历史订单" textFill="#c65858" />
+                                        <CheckBox fx:id="onlyMe" layoutX="605.0" layoutY="6.0" mnemonicParsing="false" onAction="#onlyMeCheck" text="仅我的订单" textFill="#c65858" />
+                                        <Label layoutX="277.0" layoutY="7.0" text="订单" textFill="#c65858" />
+                                        <TableView fx:id="buyTable" layoutY="28.0" prefHeight="373.0" prefWidth="826.0">
+                                            <columns>
+                                                <TableColumn fx:id="c1" editable="false" prefWidth="43.0" sortType="DESCENDING" sortable="false" text="类型" />
+                                                <TableColumn fx:id="cbno" editable="false" prefWidth="65.0" sortType="DESCENDING" text="单号" />
+                                                <TableColumn fx:id="cbgno" editable="false" prefWidth="48.0" text="货号" />
+                                                <TableColumn fx:id="cbgname" editable="false" prefWidth="90.0" sortable="false" text="货名" />
+                                                <TableColumn fx:id="cbnum" editable="false" prefWidth="65.0" sortable="false" text="数量" />
+                                                <TableColumn fx:id="cbstatus" prefWidth="33.0" sortable="false" text="状态" />
+                                                <TableColumn fx:id="cbstime" editable="false" prefWidth="159.0" text="下单时间" />
+                                                <TableColumn fx:id="cbetime" editable="false" minWidth="7.0" prefWidth="173.0" text="审核时间" />
+                                                <TableColumn fx:id="cbbuyer" editable="false" minWidth="4.0" prefWidth="67.0" sortable="false" text="下单员工" />
+                                                <TableColumn fx:id="cbchecker" editable="false" minWidth="0.0" prefWidth="81.0" sortable="false" text="审核员" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="refreshBtn1" layoutX="826.0" layoutY="109.0" mnemonicParsing="false" onAction="#refreshBtn1Clicked" prefHeight="43.0" prefWidth="138.0" text="点我刷新" textFill="#f50505">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="ApproveBtn" layoutX="826.0" layoutY="215.0" mnemonicParsing="false" onAction="#ApproveBtnClicked" prefHeight="41.0" prefWidth="138.0" text="审核通过" textFill="#f50505">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="库存信息">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="600.0">
+                                    <children>
+                                        <TableView fx:id="inventoryTable" layoutX="2.0" layoutY="-1.0" prefHeight="399.0" prefWidth="816.0">
+                                            <columns>
+                                                <TableColumn fx:id="cino" editable="false" prefWidth="75.0" text="货号" />
+                                                <TableColumn fx:id="ciname" editable="false" prefWidth="153.0" sortable="false" text="货名" />
+                                                <TableColumn fx:id="cilocation" editable="false" prefWidth="135.0" sortable="false" text="仓库" />
+                                                <TableColumn fx:id="cinum" editable="false" prefWidth="67.0" sortable="false" text="数量" />
+                                                <TableColumn fx:id="ciproducer" editable="false" prefWidth="129.0" sortable="false" text="厂家" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="refreshBtn2" layoutX="818.0" layoutY="74.0" mnemonicParsing="false" onAction="#refreshBtn2Clicked" prefHeight="40.0" prefWidth="143.0" text="点我刷新" textFill="#f50505">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="缺货信息">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="600.0">
+                                    <children>
+                                        <TableView fx:id="inventoryTable1" layoutX="2.0" layoutY="-1.0" prefHeight="399.0" prefWidth="816.0">
+                                            <columns>
+                                                <TableColumn fx:id="lno" editable="false" prefWidth="75.0" text="货号" />
+                                                <TableColumn fx:id="lname" editable="false" prefWidth="153.0" sortable="false" text="货名" />
+                                                <TableColumn fx:id="lnum" editable="false" prefWidth="67.0" sortable="false" text="缺量" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="refreshBtn3" layoutX="818.0" layoutY="74.0" mnemonicParsing="false" onAction="#refreshBtn3Clicked" prefHeight="40.0" prefWidth="143.0" text="点我刷新" textFill="#f50505">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="79.0" prefWidth="960.0">
+            <children>
+                <Button fx:id="btn_logout" layoutX="226.0" layoutY="10.0" mnemonicParsing="false" onAction="#on_btn_logout_clicked" prefHeight="30.0" prefWidth="124.0" text="注销">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_exit" layoutX="601.0" layoutY="10.0" mnemonicParsing="false" onAction="#on_btn_exit_clicked" prefHeight="30.0" prefWidth="124.0" text="退出">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children></AnchorPane>
+    </items>
+</SplitPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryManage.login_controller">
+   <children>
+      <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="402.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="114.0" prefWidth="230.0">
+               <children>
+                  <Label layoutX="141.0" layoutY="-3.0" prefHeight="83.0" prefWidth="336.0" text="仓储管理系统1.0" textAlignment="CENTER" textFill="#942304">
+                     <font>
+                        <Font name="书体坊米芾体" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="268.0">
+               <children>
+                  <Label layoutX="71.0" layoutY="87.0" scaleX="1.5" scaleY="1.5" text="账号" />
+                  <Label layoutX="71.0" layoutY="155.0" scaleX="1.5" scaleY="1.5" text="密码" />
+                   <!--   onAction="#on_checkbox_doctor_checked"  onAction="#on_checkbox_patient_checked"   并需要马上响应-->
+                   <PasswordField fx:id="field_pswd" layoutX="201.0" layoutY="151.0" prefHeight="23.0" prefWidth="266.0" promptText="6位字母数字" scaleX="1.5" scaleY="1.5" />
+                  <TextField fx:id="field_account" layoutX="201.0" layoutY="83.0" prefHeight="23.0" prefWidth="266.0" promptText="6位字母数字" scaleX="1.5" scaleY="1.5" />
+                  <Button fx:id="btn_login" layoutX="154.0" layoutY="250.0" mnemonicParsing="false" onAction="#on_btn_login_clicked" prefHeight="41.0" prefWidth="99.0" text="登录" textFill="#972929">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_exit" layoutX="337.0" layoutY="250.0" mnemonicParsing="false" onAction="#on_btn_exit_clicked" prefHeight="41.0" prefWidth="99.0" text="退出" textFill="#972929">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
