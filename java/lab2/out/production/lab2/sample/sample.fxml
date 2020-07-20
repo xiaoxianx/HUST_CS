@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+    <children>
+        <SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="402.0" prefWidth="600.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="114.0" prefWidth="230.0">
+                    <children>
+                        <Label layoutX="141.0" layoutY="-3.0" prefHeight="83.0" prefWidth="336.0" text="HUST医院挂号系统" textAlignment="CENTER" textFill="#942304">
+                            <font>
+                                <Font name="书体坊米芾体" size="36.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="268.0">
+                    <children>
+                        <Label layoutX="109.0" layoutY="67.0" text="账号" />
+                        <Label layoutX="109.0" layoutY="135.0" text="密码" />
+                        <Label layoutX="97.0" layoutY="204.0" text="登陆类型" />
+                        <CheckBox fx:id="ckbox_patient" layoutX="218.0" layoutY="203.0" mnemonicParsing="false" text="我是医生" />
+                        <CheckBox fx:id="ckbox_doctor" layoutX="330.0" layoutY="203.0" mnemonicParsing="false" text="我是患者" />
+                        <!--   onAction="#on_checkbox_doctor_checked"  onAction="#on_checkbox_patient_checked"   并需要马上响应-->
+                        <PasswordField fx:id="field_pswd" layoutX="180.0" layoutY="131.0" prefHeight="23.0" prefWidth="266.0" />
+                        <TextField fx:id="field_account" layoutX="180.0" layoutY="63.0" prefHeight="23.0" prefWidth="266.0" promptText="6位数病人号或医生号" />
+                        <Button fx:id="btn_login" layoutX="154.0" layoutY="250.0" mnemonicParsing="false"  prefHeight="41.0" prefWidth="99.0"
+                                onAction="#on_btn_login_clicked" text="登录" textFill="#972929">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_exit" layoutX="337.0" layoutY="250.0" mnemonicParsing="false"  prefHeight="41.0" prefWidth="99.0"
+                                onAction="#on_btn_exit_clicked" text="退出" textFill="#972929">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+                    </children></AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
